@@ -1,0 +1,80 @@
+:root {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+
+  --bg-color-contact-form: #FBF5F3;
+  --bg-color: #8b0000;
+  --accent-color: #ffa630;
+  --accent-color-hover: #ca7a11;
+}
+
+/* MEDIA QUERIES AND BREAKPOINTS */
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+/* 992px */
+@media (max-width: 992px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* 768 */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* 600px */
+@media (max-width: 600px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+/* 440px */
+@media (max-width: 440px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 125dpi) {
+  html {
+    font-size: 12.8px;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.25) and (max-width: 992px),
+  (min-resolution: 125dpi) and (max-width: 992px) {
+  html {
+    font-size: 12.8px;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.25) and (max-width: 768px),
+  (min-resolution: 125dpi) and (max-width: 768px) {
+  html {
+    font-size: 11.2px;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.25) and (max-width: 440px),
+  (min-resolution: 125dpi) and (max-width: 440px) {
+  html {
+    font-size: 11px;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.25) and (max-width: 370px),
+  (min-resolution: 125dpi) and (max-width: 370px) {
+  html {
+    font-size: 9px;
+  }
+}

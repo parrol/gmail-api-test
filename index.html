@@ -6,14 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="/">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link href="/styles.css" rel="stylesheet">
+    <link href="/styles/styles.css" type="text/css" rel="stylesheet">
+    <link href="/styles/contact-form.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src='function.js'></script>
     <title>En construcción</title>
 </head>
 
 <body>
     <div class="body-container">
-        <h1 class="title">🚧 ¡SITIO EN CONSTRUCCIÓN! 🚧</h1>
+        <h1 class="title">🚧 UNDER CONSTRUCTION! 🚧</h1>
+        
+        <button id="button" onclick="toggleContactForm()" class="contact-form__button">Contact form</button>
 
+
+<!--         CONTACT FORM -->
+        <div id="contact-form" class="contact-form__container">
+            <form action="">
+          
+              <label class="label" for="name">First Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name...">
+          
+              <label for="subject">Subject</label>
+              <textarea id="subject" name="subject" placeholder="Write something..."></textarea>
+          
+              <input class="contact-form__button" type="submit" value="Submit">
+          
+            </form>
+          </div>
     </div>
 </body>
 
