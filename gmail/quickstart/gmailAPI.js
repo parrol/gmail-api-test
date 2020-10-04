@@ -1,29 +1,3 @@
-const express = require('express');
-const { readFile } = require('fs').promises;
-const app = express();
-
-/* import mailingController from 'mailing/controller/mailing.controller.js'; */
-require('dotenv').config();
-
-//define the directory for static files
-app.use(express.static(__dirname + '/'));
-
-// API
-/* app.use('/mailing', mailingController); */
-
-app.get('/', async (req, res) => {
-
-  res.send(await readFile('./index.html', 'utf8'));
-})
-
-app.get('/users', (req, res) => {
-  res.send('Users Page')
-  console.log('Users page')
-
-})
-
-app.listen(process.env.PORT || 3000, () => console.log(`Server Started on http://localhost:${process.env.PORT || 3000}`))
-
 const fs = require('fs');
 const readline = require('readline');
 const { google } = require('googleapis');
@@ -38,14 +12,13 @@ const SCOPES = [
 // The file token.json stores the user's access and refresh tokens, and is
 // created automatically when the authorization flow completes for the first
 // time.
-const TOKEN_PATH = 'gmail/credentials/token.json';
-const CREDENTIALS = 'gmail/credentials/credentials.json';
+const TOKEN_PATH = '../credentials/token.json';
+const CREDENTIALS = '../credentials/credentials.json';
 let name = "asdf";
-let subject ="asdfa";
+let subject = "asdfa";
 
 
-
-function getMessageInfoAndSend() {
+function getMessageInfo() {
 
   // Load client secrets from a local file.
   fs.readFile(CREDENTIALS, (err, content) => {
@@ -56,7 +29,6 @@ function getMessageInfoAndSend() {
 
   console.log(`hola: ${name}`);
 }
-
 
 /**
  * Create an OAuth2 client with the given credentials, and then execute the
@@ -133,7 +105,8 @@ function listLabels(auth) {
 
 function sendMessage(auth) {
 
-  let Mail = require('C:/Users/carlo/Documents/PARRA/Site/gmail/quickstart/createMail.js');
+  let messageInfo = getMessageInfo();
+  let Mail = require('./createMail.js');
   let obj = new Mail(auth, "carlos.parra97@gmail.com", name, subject, 'mail');
 
   //'mail' is the task, if not passed it will save the message as draft.

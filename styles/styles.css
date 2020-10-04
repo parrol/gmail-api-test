@@ -34,7 +34,7 @@ body {
 /* 600px */
 @media (max-width: 600px) {
   html {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 
@@ -75,6 +75,6 @@ body {
 @media (-webkit-min-device-pixel-ratio: 1.25) and (max-width: 370px),
   (min-resolution: 125dpi) and (max-width: 370px) {
   html {
-    font-size: 9px;
+    font-size: 9.6px;
   }
 }

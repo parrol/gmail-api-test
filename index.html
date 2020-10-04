@@ -8,7 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="/styles/styles.css" type="text/css" rel="stylesheet">
     <link href="/styles/contact-form.css" type="text/css" rel="stylesheet">
+    <link rel="icon" type="img/svg-xml"  href="favicon.svg">
+
+    <link rel="canonical" href="https://parradev.me/">
     <script type="text/javascript" src='function.js'></script>
+<!--     <script type="text/javascript" src='/gmail/quickstart/gmailAPI.js'></script> -->
     <title>En construcción</title>
 </head>
 
@@ -21,7 +25,7 @@
 
 <!--         CONTACT FORM -->
         <div id="contact-form" class="contact-form__container">
-            <form action="">
+            <form onsubmit="getMessageInfoAndSend()">
           
               <label class="label" for="name">First Name</label>
               <input type="text" id="name" name="name" placeholder="Your name...">
