@@ -1,9 +1,18 @@
 const express = require('express');
 const { readFile } = require('fs').promises;
 const app = express();
-
 /* import mailingController from 'mailing/controller/mailing.controller.js'; */
-require('dotenv').config();
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
+require('custom-env').env('ricardo')
+
+const {
+  RICARDO_TOKEN
+} = process.env;
+
+
 
 //define the directory for static files
 app.use(express.static(__dirname + '/'));
@@ -16,9 +25,10 @@ app.get('/', async (req, res) => {
   res.send(await readFile('./index.html', 'utf8'));
 })
 
-app.get('/users', (req, res) => {
-  res.send('Users Page')
-  console.log('Users page')
+app.get('/ricardo', (req, res) => {
+  res.send(`Ah, bro. Este es tu token: ${RICARDO_TOKEN}`)
+  console.log('RICARDO PAGE')
+  console.log(process.env);
 
 })
 
